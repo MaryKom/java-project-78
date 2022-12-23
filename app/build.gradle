@@ -1,6 +1,9 @@
 plugins {
     id 'application'
+    id 'com.github.ben-manes.versions' version '0.43.0'
     id 'checkstyle'
+    id 'jacoco'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
 group 'hexlet.code'
@@ -22,4 +25,12 @@ compileJava {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled = true
+    }
 }
