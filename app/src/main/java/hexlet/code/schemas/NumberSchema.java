@@ -10,7 +10,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     public NumberSchema positive() {
-        Predicate<Object> predicatePositive = x -> x instanceof Integer && (Integer) x > 0;
+        Predicate<Object> predicatePositive = x -> (x == null) || (x instanceof Integer && (Integer) x > 0);
         super.addPredicate(predicatePositive);
         return this;
     }
