@@ -23,7 +23,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     @Override
-    public boolean isInvalidData(Object obj) {
+    public final boolean isInvalidData(Object obj) {
         return !(obj instanceof Integer);
     }
 }
