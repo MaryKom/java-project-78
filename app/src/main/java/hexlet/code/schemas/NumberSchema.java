@@ -11,7 +11,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     public final NumberSchema positive() {
-        Predicate<Object> predicatePositive = x -> (x == null) || ((Integer) x > 0);
+        Predicate<Object> predicatePositive = x -> x instanceof Integer && (int) x > 0;
         super.addPredicate(predicatePositive);
         return this;
     }
